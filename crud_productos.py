@@ -142,3 +142,38 @@ def eliminar_producto():
     print(f"Producto '{producto.nombre}' eliminado correctamente.")
 
 
+# Menú principal
+
+def mostrar_menu():
+    """Muestra las opciones del menú por pantalla"""
+    print("\nGESTIÓN DE PRODUCTOS")
+    print("1. Crear producto")
+    print("2. Listar productos")
+    print("3. Actualizar producto")
+    print("4. Eliminar producto")
+    print("5. Salir")
+
+
+def main():
+    """Repite el menú hasta que el usuario elige salir"""
+    opcion = ""
+    while opcion != "5":  # repite mientras no se elije salir
+        mostrar_menu()
+        opcion = input("Selecciona una opción: ").strip()
+        # comparamos la opción entre "" porque input devuelve texto
+        if opcion == "1":
+            crear_producto()
+        elif opcion == "2":
+            listar_productos()
+        elif opcion == "3":
+            actualizar_producto()
+        elif opcion == "4":
+            eliminar_producto()
+        elif opcion == "5":
+            print("¡Hasta pronto!")
+        else:
+            print("Esta opción no existe. Elige un número/opción del 1 al 5.")
+
+
+if __name__ == "__main__":
+    main()  # arranca el programa
