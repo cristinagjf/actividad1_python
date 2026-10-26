@@ -124,3 +124,21 @@ def actualizar_producto():
     producto.cantidad = pedir_entero(f"Nueva cantidad [{producto.cantidad}]: ", producto.cantidad)
     print("Producto actualizado correctamente.")
 
+
+def eliminar_producto():
+    """Busca un producto por su id y lo elimina de la lista si existe"""
+    print("\nEliminar producto")
+    if len(productos) == 0:
+        print("No existen productos para eliminar.")
+        return
+    # reutilizamos pedir_entero y buscar_producto_por_id:
+    id_buscado = pedir_entero("Id del producto a eliminar: ")
+    producto = buscar_producto_por_id(id_buscado)
+    # se el producto no existe, se indica:
+    if producto is None:
+        print(f"Error: no existe ningún producto con id {id_buscado}.")
+        return
+    productos.remove(producto)
+    print(f"Producto '{producto.nombre}' eliminado correctamente.")
+
+
