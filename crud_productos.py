@@ -104,3 +104,23 @@ def listar_productos():
     for producto in productos:  # si la lista no está vacía, la recorremos
         print(producto)
 
+
+def actualizar_producto():
+    """Busca un producto por su id y permite modificar sus datos"""
+    print("\nActualizar producto")
+    if len(productos) == 0:
+        print("No existen productos para actualizar.")
+        return
+    id_buscado = pedir_entero("Id del producto a actualizar: ")
+    producto = buscar_producto_por_id(id_buscado)  # Lo busca
+    if producto is None:
+        print(f"Error: no existe ningún producto con id {id_buscado}.")  # Si no existe devuelve mensaje
+        return
+
+    print(f"Producto encontrado -> {producto}")
+    print("(Pulsa Intro sin escribir nada para mantener el valor actual)")
+    producto.nombre = pedir_texto(f"Nuevo nombre [{producto.nombre}]: ", producto.nombre)
+    producto.precio = pedir_decimal(f"Nuevo precio [{producto.precio}]: ", producto.precio)  # cambia el dato del propio producto que está en la lista
+    producto.cantidad = pedir_entero(f"Nueva cantidad [{producto.cantidad}]: ", producto.cantidad)
+    print("Producto actualizado correctamente.")
+
