@@ -70,3 +70,11 @@ def pedir_decimal(mensaje, valor_actual=None):
         except ValueError:
             print("Error: escribe un número (por ejemplo 12.50).")
 
+
+def buscar_producto_por_id(id_buscado):
+    """Devuelve el producto con ese id, o None si no existe"""
+    for producto in productos:  # recorre la lista
+        if producto.id == id_buscado:
+            return producto  # si el id coincide devuelve el producto
+    return None  # si el for acaba sin encontrar el id
+
