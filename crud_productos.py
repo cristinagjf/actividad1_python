@@ -78,3 +78,29 @@ def buscar_producto_por_id(id_buscado):
             return producto  # si el id coincide devuelve el producto
     return None  # si el for acaba sin encontrar el id
 
+
+# Funciones CRUD
+
+def crear_producto():
+    """Pide los datos al usuario, crea un Producto y lo añade a la lista"""
+    global siguiente_id  # cambia la variable global de fuera y elimina error al hacer +=1
+    print("\nCrear producto")
+    nombre = pedir_texto("Nombre: ")
+    precio = pedir_decimal("Precio: ")
+    cantidad = pedir_entero("Cantidad: ")
+
+    nuevo_producto = Producto(siguiente_id, nombre, precio, cantidad)
+    productos.append(nuevo_producto)
+    siguiente_id += 1
+    print(f"Producto creado correctamente con id {nuevo_producto.id}.")
+
+
+def listar_productos():
+    """Recorre la lista y muestra todos los productos"""
+    print("\nListado de productos")
+    if len(productos) == 0:  # si la lista está vacía lo dice
+        print("No hay productos registrados.")
+        return
+    for producto in productos:  # si la lista no está vacía, la recorremos
+        print(producto)
+
