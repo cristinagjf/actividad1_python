@@ -16,6 +16,10 @@ class Producto:
                 f"Precio: {self.precio:.2f} € | Cantidad: {self.cantidad}")
 
 
-raton = Producto(1, "Ratón", 12.5, 30)
-print(raton)
-print(raton.nombre)
+
+
+# Lista vacía donde se guardan los productos mientras se ejecuta el programa
+productos = []
+
+# Variable global para dar un id único a cada producto incrementado
+siguiente_id = 1
