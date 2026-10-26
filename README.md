@@ -16,7 +16,7 @@ Practicar el diseño de clases en Python y su aplicación en un sistema CRUD (cr
 1. Descargar el proyecto de una de estas dos formas:
    - Clonar el repositorio:
 ```bash
-     git clone https://github.com/CristinaGJ/actividad1_python.git
+     git clone https://github.com/cristinagjf/actividad1_python.git
      cd actividad1_python
 ```
    - O descomprimir el ZIP entregado y abrir una terminal dentro de la carpeta.
